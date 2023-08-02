@@ -3,7 +3,11 @@ from query_notion_database import get_pageid_for_title, get_list_of_paragraphs_f
 import os
 
 email = os.environ.get("AMAZON_EMAIL")
-password = os.environ.get("AMAZON_PASSWORD")
+password = open("/config/key.txt","r")
+lines=f.readlines()
+password=lines[0]
+f.close()
+#password = os.environ.get("AMAZON_PASSWORD")
 
 book_highlights = get_highlights(email, password)
 
