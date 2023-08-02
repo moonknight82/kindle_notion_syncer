@@ -33,4 +33,7 @@ RUN pip install -r requirements.txt
 # set display port to avoid crash
 ENV DISPLAY=:99
 
+#PATHS
+ENV PATH=/usr/local/bin/chromedriver:${PATH}"
+
 VOLUME /config
