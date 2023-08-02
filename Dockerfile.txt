@@ -17,13 +17,13 @@ RUN pip install selenium
 # create folder app
 RUN mkdir /app
 # copy test file
-COPY test_webscrapping.py /app
+#COPY test_webscrapping.py /app
 
 # go to your directory of project remove # the following line to copy your projecto to the container.
-#COPY . /app
+#COPY root/ /app
 
 #if you need to use some differents libs , use 
-#RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt
 #or if you dont have requirements.txt file user the following example (try to use always requirements.txt)
 #pip install numpy
 
@@ -32,3 +32,5 @@ COPY test_webscrapping.py /app
 
 # set display port to avoid crash
 ENV DISPLAY=:99
+
+VOLUME /config
